@@ -14,6 +14,7 @@
 		540F933A2111430B00DE73AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 540F93392111430B00DE73AB /* Assets.xcassets */; };
 		540F933D2111430B00DE73AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 540F933B2111430B00DE73AB /* LaunchScreen.storyboard */; };
 		540F934521114B2900DE73AB /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540F934421114B2900DE73AB /* HomeController.swift */; };
+		54DBA36521155A4F004345E7 /* WeatherDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54DBA36421155A4F004345E7 /* WeatherDataModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		540F933C2111430B00DE73AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		540F933E2111430B00DE73AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		540F934421114B2900DE73AB /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
+		54DBA36421155A4F004345E7 /* WeatherDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDataModel.swift; sourceTree = "<group>"; };
 		9E926AF6D71218B1B7EE7577 /* Pods-Vision.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vision.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Vision/Pods-Vision.debug.xcconfig"; sourceTree = "<group>"; };
 		ACFE723FAFAA480AF9F8D9FE /* Pods_Vision.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Vision.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2B73D88E56DC675ACD46370 /* Pods-Vision.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vision.release.xcconfig"; path = "Pods/Target Support Files/Pods-Vision/Pods-Vision.release.xcconfig"; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 		540F932F2111430900DE73AB /* Vision */ = {
 			isa = PBXGroup;
 			children = (
+				54DBA36421155A4F004345E7 /* WeatherDataModel.swift */,
 				540F93302111430900DE73AB /* AppDelegate.swift */,
 				540F93342111430900DE73AB /* SecondViewController.swift */,
 				540F93362111430900DE73AB /* Main.storyboard */,
@@ -205,6 +208,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				54DBA36521155A4F004345E7 /* WeatherDataModel.swift in Sources */,
 				540F93352111430900DE73AB /* SecondViewController.swift in Sources */,
 				540F93312111430900DE73AB /* AppDelegate.swift in Sources */,
 				540F934521114B2900DE73AB /* HomeController.swift in Sources */,
