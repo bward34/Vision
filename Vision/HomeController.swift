@@ -23,16 +23,45 @@ class HomeController: UIViewController, CLLocationManagerDelegate {
     let locationManager = CLLocationManager()
     let weatherData = WeatherDataModel();
     
+    @IBOutlet var greetingLabel: UILabel!
+    @IBOutlet var dateLabel: UILabel!
+    
+    //MARK: Weather container
+    @IBOutlet var weatherView: UIView!
     @IBOutlet var cityLabel : UILabel!
     @IBOutlet var tempLabel : UILabel!
-    @IBOutlet var greetingLabel: UILabel!
     @IBOutlet var weatherImage: UIImageView!
     @IBOutlet var condtion: UILabel!
     @IBOutlet var loTemp: UILabel!
     @IBOutlet var hiTemp: UILabel!
     
+    //MARK: System info container
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // get the current date and time
+        let date = Date()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "EEEE, MMMM dd, yyyy"
+        let currentDateString: String = dateFormatter.string(from: date)
+        dateLabel.text = "\(currentDateString)"
+        
+        //get current time to determine the greeting
+        let calendar = Calendar.current
+        let hour = calendar.component(.hour, from: date)
+        switch(hour) {
+            case 1...12 :
+                greetingLabel.text = "Good morning"
+            case 12...17 :
+                greetingLabel.text = "Good afternoon"
+            case 17...20 :
+                greetingLabel.text = "Good evening"
+            case 20...24 :
+                greetingLabel.text = "Good night"
+            default:
+                greetingLabel.text = "Good day"
+        }
         
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
@@ -48,10 +77,7 @@ class HomeController: UIViewController, CLLocationManagerDelegate {
         Alamofire.request(url, method: .get, parameters: parameters).responseJSON {
             response in //specify self
             if response.result.isSuccess {
-                
-                print("Success! Got the weather data")
                 let weatherJSON : JSON = JSON(response.result.value!)
-                print(weatherJSON)
                 self.updateWeatherData(json: weatherJSON)
             }
             else {
