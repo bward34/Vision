@@ -103,8 +103,7 @@ class HomeController: UIViewController, CLLocationManagerDelegate {
         weatherData.city = "\(cityName), \(stateName)"
         weatherData.conditionName = json["query"]["results"]["channel"]["item"]["condition"]["text"].stringValue
         weatherData.code = Int(json["query"]["results"]["channel"]["item"]["condition"]["code"].stringValue)!
-        //weatherData.condition = json["weather"][0]["id"].intValue
-        //weatherData.weatherIconName = weatherData.updateWeatherIcon(condition: weatherData.condition)
+        weatherData.weatherIconName = weatherData.updateWeatherIcon(condition: weatherData.code)
         updateUIWithWeatherData()
         }
         else {
@@ -119,7 +118,7 @@ class HomeController: UIViewController, CLLocationManagerDelegate {
         hiTemp.text = "HI: \(weatherData.hiTemp)°"
         tempLabel.text = "\(weatherData.temperature)°"
         condtion.text = weatherData.conditionName
-       // weatherImage.image = UIImage(named: weatherData.weatherIconName)
+        weatherImage.image = UIImage(named: weatherData.weatherIconName)
     }
     
     // MARK: END Weather logic functions
