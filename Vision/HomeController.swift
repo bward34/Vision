@@ -12,6 +12,7 @@ import CoreLocation
 import CoreData
 import SwiftyJSON
 import Alamofire
+import Firebase
 
 class HomeController: UIViewController, CLLocationManagerDelegate {
 
@@ -39,7 +40,6 @@ class HomeController: UIViewController, CLLocationManagerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // get the current date and time
         let date = Date()
         let dateFormatter = DateFormatter()

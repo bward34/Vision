@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>742251100881-896nf4g4v81r6bl4iav75kjabmd0otfj.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.742251100881-896nf4g4v81r6bl4iav75kjabmd0otfj</string>
+	<key>API_KEY</key>
+	<string>AIzaSyA9mfEOpLsHDga9ugQIfKj6YJ1hSIHjkvU</string>
+	<key>GCM_SENDER_ID</key>
+	<string>742251100881</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.brandonward.Vision</string>
+	<key>PROJECT_ID</key>
+	<string>vision-5b92c</string>
+	<key>STORAGE_BUCKET</key>
+	<string>vision-5b92c.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true/>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false/>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false/>
+	<key>IS_GCM_ENABLED</key>
+	<true/>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true/>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:742251100881:ios:ea753c212a175b32</string>
+	<key>DATABASE_URL</key>
+	<string>https://vision-5b92c.firebaseio.com</string>
+</dict>
+</plist>

@@ -8,5 +8,6 @@ target 'Vision' do
   # Pods for Vision
   pod 'Alamofire'
   pod 'SwiftyJSON'
+  pod 'Firebase/Core'
 
 end
