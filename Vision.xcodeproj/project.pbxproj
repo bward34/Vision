@@ -137,6 +137,7 @@
 				TargetAttributes = {
 					540F932C2111430900DE73AB = {
 						CreatedOnToolsVersion = 9.3.1;
+						LastSwiftMigration = 1000;
 					};
 				};
 			};
@@ -381,7 +382,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.brandonward.Vision;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -400,7 +401,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.brandonward.Vision;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

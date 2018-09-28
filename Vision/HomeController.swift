@@ -20,6 +20,7 @@ class HomeController: UIViewController, CLLocationManagerDelegate {
     let APP_ID = "30c2075ee7aed4c338fa76abed5e1b3c"
     let YAHOO_ID = "bCKyRS44"
     let YAHOO_URL = "https://query.yahooapis.com/v1/public/yql"
+    let SERVER_URL = "https://localhost:5001/api/shape";
     
     let locationManager = CLLocationManager()
     let weatherData = WeatherDataModel();
@@ -35,6 +36,7 @@ class HomeController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet var condtion: UILabel!
     @IBOutlet var loTemp: UILabel!
     @IBOutlet var hiTemp: UILabel!
+    @IBOutlet var serverLabel: UILabel!
     
     //MARK: System info container
     
@@ -63,25 +65,37 @@ class HomeController: UIViewController, CLLocationManagerDelegate {
                 greetingLabel.text = "Good day"
         }
         
+        self.getData(url: SERVER_URL, parameters: [:], type: "server")
+        
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
     }
     
-    // MARK: Weather logic functions
+    // MARK: Weather/Api logic functions
     
-    //getWeatherData() -> gets the json data from api for weather
-    func getWeatherData(url: String, parameters: [String: String]) {
+    //getData() -> gets the json data from api for weather/server
+    func getData(url: String, parameters: [String: String], type: String) {
         
         Alamofire.request(url, method: .get, parameters: parameters).responseJSON {
             response in //specify self
             if response.result.isSuccess {
-                let weatherJSON : JSON = JSON(response.result.value!)
-                self.updateWeatherData(json: weatherJSON)
+                let dataJSON : JSON = JSON(response.result.value!)
+                if(type == "weather") {
+                self.updateWeatherData(json: dataJSON)
+                }else {
+                    print(dataJSON)
+                    self.serverLabel.text = "Connected to Server!"
+                }
             }
             else {
+                if(type == "weather") {
                 self.cityLabel.text = "Connection Issues"
+                }
+                else {
+                self.serverLabel.text = "Not Connected!"
+                }
             }
         }
     }
@@ -104,7 +118,7 @@ class HomeController: UIViewController, CLLocationManagerDelegate {
                         let city = place.locality!
                         let query = "select * from weather.forecast where woeid in (select woeid from geo.places(1) where text=\u{22}\(city.lowercased()), \(state.lowercased())\u{22})"
                         let yahoo_params : [String : String ] = ["q": query, "format" : "json"]
-                       self.getWeatherData(url: self.YAHOO_URL, parameters: yahoo_params)
+                        self.getData(url: self.YAHOO_URL, parameters: yahoo_params, type: "weather")
                     }
                 }
             }
@@ -147,5 +161,5 @@ class HomeController: UIViewController, CLLocationManagerDelegate {
         weatherImage.image = UIImage(named: weatherData.weatherIconName)
     }
     
-    // MARK: END Weather logic functions
+    // MARK: END Weather/Api logic functions
 }
