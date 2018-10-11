@@ -23,6 +23,32 @@ class CanvasController: UIViewController {
         super.viewDidLoad()
     }
     
+    @IBAction func resetPressed(_ sender: Any) {
+        mainImageView.image = nil
+    }
+    
+    
+    //To be send pressed
+    @IBAction func sharePressed(_ sender: Any) {
+        guard let image = mainImageView.image else {
+            return
+        }
+        let activity = UIActivityViewController(activityItems: [image], applicationActivities: nil)
+        present(activity, animated: true)
+    }
+    
+    
+    @IBAction func pencilPressed(_ sender: UIButton) {
+        guard let pencil = Pencil(tag: sender.tag) else {
+            return
+        }
+        color = pencil.color
+        if pencil == .eraser {
+            opacity = 1.0
+        }
+    }
+    
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         guard let touch = touches.first else {
             return
@@ -84,8 +110,6 @@ class CanvasController: UIViewController {
         tempImageView?.image?.draw(in: view.bounds, blendMode: .normal, alpha: opacity)
         mainImageView.image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
-        
-        tempImageView.image = nil
     }
 
 

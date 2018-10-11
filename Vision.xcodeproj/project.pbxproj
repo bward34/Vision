@@ -17,6 +17,7 @@
 		540F934521114B2900DE73AB /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540F934421114B2900DE73AB /* HomeController.swift */; };
 		54220FCA21192E0100C87693 /* TextEditorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54220FC921192E0100C87693 /* TextEditorController.swift */; };
 		54220FCC211946E400C87693 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 54220FCB211946E300C87693 /* GoogleService-Info.plist */; };
+		54550A39216EE53700375851 /* Pencil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54550A38216EE53700375851 /* Pencil.swift */; };
 		54DBA36521155A4F004345E7 /* WeatherDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54DBA36421155A4F004345E7 /* WeatherDataModel.swift */; };
 		54DBA3692117DBD8004345E7 /* Designer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54DBA3682117DBD8004345E7 /* Designer.swift */; };
 /* End PBXBuildFile section */
@@ -33,6 +34,7 @@
 		540F934421114B2900DE73AB /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		54220FC921192E0100C87693 /* TextEditorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextEditorController.swift; sourceTree = "<group>"; };
 		54220FCB211946E300C87693 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		54550A38216EE53700375851 /* Pencil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pencil.swift; sourceTree = "<group>"; };
 		54DBA36421155A4F004345E7 /* WeatherDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDataModel.swift; sourceTree = "<group>"; };
 		54DBA3682117DBD8004345E7 /* Designer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Designer.swift; sourceTree = "<group>"; };
 		9E926AF6D71218B1B7EE7577 /* Pods-Vision.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vision.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Vision/Pods-Vision.debug.xcconfig"; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 				54DBA3682117DBD8004345E7 /* Designer.swift */,
 				54220FC921192E0100C87693 /* TextEditorController.swift */,
 				5406458C216C3C8E00E26380 /* CanvasController.swift */,
+				54550A38216EE53700375851 /* Pencil.swift */,
 			);
 			path = Vision;
 			sourceTree = "<group>";
@@ -228,6 +231,7 @@
 			files = (
 				5406458D216C3C8E00E26380 /* CanvasController.swift in Sources */,
 				54DBA3692117DBD8004345E7 /* Designer.swift in Sources */,
+				54550A39216EE53700375851 /* Pencil.swift in Sources */,
 				54DBA36521155A4F004345E7 /* WeatherDataModel.swift in Sources */,
 				540F93352111430900DE73AB /* SecondViewController.swift in Sources */,
 				54220FCA21192E0100C87693 /* TextEditorController.swift in Sources */,
