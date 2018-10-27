@@ -192,10 +192,20 @@
         <!--Animations-->
         <scene sceneID="Aih-nJ-j50">
             <objects>
-                <viewController title="Animations" id="6Ke-27-NqO" sceneMemberID="viewController">
+                <viewController title="Animations" id="6Ke-27-NqO" customClass="AnimationController" customModule="Vision" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NWq-ss-U22">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yCS-Lq-R5J">
+                                <rect key="frame" x="102" y="165" width="117" height="55"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="sendPressed:" destination="6Ke-27-NqO" eventType="touchUpInside" id="ewm-pD-7E0"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="0FZ-4C-QhR"/>
                     </view>
@@ -203,7 +213,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BbH-Px-urx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1546" y="-321"/>
+            <point key="canvasLocation" x="1544.8" y="-321.58920539730138"/>
         </scene>
         <!--Shapes-->
         <scene sceneID="nm0-bw-ZQO">

@@ -15,6 +15,7 @@
 		540F933A2111430B00DE73AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 540F93392111430B00DE73AB /* Assets.xcassets */; };
 		540F933D2111430B00DE73AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 540F933B2111430B00DE73AB /* LaunchScreen.storyboard */; };
 		540F934521114B2900DE73AB /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540F934421114B2900DE73AB /* HomeController.swift */; };
+		5412EB412184D22000591810 /* AnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5412EB402184D22000591810 /* AnimationController.swift */; };
 		54220FCA21192E0100C87693 /* TextEditorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54220FC921192E0100C87693 /* TextEditorController.swift */; };
 		54220FCC211946E400C87693 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 54220FCB211946E300C87693 /* GoogleService-Info.plist */; };
 		54550A39216EE53700375851 /* Pencil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54550A38216EE53700375851 /* Pencil.swift */; };
@@ -32,6 +33,7 @@
 		540F933C2111430B00DE73AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		540F933E2111430B00DE73AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		540F934421114B2900DE73AB /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
+		5412EB402184D22000591810 /* AnimationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationController.swift; sourceTree = "<group>"; };
 		54220FC921192E0100C87693 /* TextEditorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextEditorController.swift; sourceTree = "<group>"; };
 		54220FCB211946E300C87693 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		54550A38216EE53700375851 /* Pencil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pencil.swift; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 				54220FC921192E0100C87693 /* TextEditorController.swift */,
 				5406458C216C3C8E00E26380 /* CanvasController.swift */,
 				54550A38216EE53700375851 /* Pencil.swift */,
+				5412EB402184D22000591810 /* AnimationController.swift */,
 			);
 			path = Vision;
 			sourceTree = "<group>";
@@ -235,6 +238,7 @@
 				54DBA36521155A4F004345E7 /* WeatherDataModel.swift in Sources */,
 				540F93352111430900DE73AB /* SecondViewController.swift in Sources */,
 				54220FCA21192E0100C87693 /* TextEditorController.swift in Sources */,
+				5412EB412184D22000591810 /* AnimationController.swift in Sources */,
 				540F93312111430900DE73AB /* AppDelegate.swift in Sources */,
 				540F934521114B2900DE73AB /* HomeController.swift in Sources */,
 			);
