@@ -1,24 +1,16 @@
 //
-//  AnimationController.swift
+//  Object.swift
 //  Vision
 //
-//  Created by Brandon Ward on 10/27/18.
+//  Created by Brandon Ward on 11/10/18.
 //  Copyright © 2018 LEDBoyzz. All rights reserved.
 //
 
-import Foundation
 import UIKit
-import SwiftyJSON
-import Alamofire
 
-class AnimationController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
+class Object {
     
-    
-    let parameters = [
+    let testData = [
         "data": """
         Data in Non Binary Format :
         Z Layer: 1
@@ -225,51 +217,5 @@ class AnimationController: UIViewController {
         """
     ]
     
-    @IBAction func sendPressed(_ sender: Any) {
-        
-        let myUrl = URL(string: "http://172.20.10.4:51");
-        var request = URLRequest(url:myUrl!)
-        request.httpMethod = "POST"// Compose a query string
-        request.timeoutInterval = 180
-        let postString = "firstName=James&lastName=Bond";
-        request.httpBody = postString.data(using: String.Encoding.utf8);
-        
-        let task = URLSession.shared.dataTask(with: request) { (data: Data?, response: URLResponse?, error: Error?) in
-            
-            if error != nil
-            {
-                print("error=\(String(describing: error))")
-                return
-            }
-             //You can print out response object
-            print("response = \(String(describing: response))")
-            
-        }
-        task.resume()
-       // Alamofire.request(.POST, "https://httpbin.org/post", parameters: parameters, encoding: .JSON)
-       // let Data = Object()
-      //  let url = URL(string: "http://172.20.10.4:51")!
-        //var urlRequest = URLRequest(url: url)
-        //urlRequest.timeoutInterval = 5
-        //Alamofire.request(url, method:.post, parameters:parameters).responseJSON { response in
-          //  switch response.result {
-            //case .success:
-             //   print(response)
-            //case .failure( _):
-            //print("error")
-           //}
-       // }
-    // -> HTTP body: {"foo": [1, 2, 3], "bar": {"baz": "qux"}
-    
-    }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

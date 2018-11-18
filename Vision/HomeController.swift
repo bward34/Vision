@@ -12,7 +12,6 @@ import CoreLocation
 import CoreData
 import SwiftyJSON
 import Alamofire
-import Firebase
 
 class HomeController: UIViewController, CLLocationManagerDelegate {
 

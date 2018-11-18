@@ -10,7 +10,6 @@
 		1050766BC57425FDA8F9F45F /* Pods_Vision.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACFE723FAFAA480AF9F8D9FE /* Pods_Vision.framework */; };
 		5406458D216C3C8E00E26380 /* CanvasController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5406458C216C3C8E00E26380 /* CanvasController.swift */; };
 		540F93312111430900DE73AB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540F93302111430900DE73AB /* AppDelegate.swift */; };
-		540F93352111430900DE73AB /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 540F93342111430900DE73AB /* SecondViewController.swift */; };
 		540F93382111430900DE73AB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 540F93362111430900DE73AB /* Main.storyboard */; };
 		540F933A2111430B00DE73AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 540F93392111430B00DE73AB /* Assets.xcassets */; };
 		540F933D2111430B00DE73AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 540F933B2111430B00DE73AB /* LaunchScreen.storyboard */; };
@@ -19,6 +18,8 @@
 		54220FCA21192E0100C87693 /* TextEditorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54220FC921192E0100C87693 /* TextEditorController.swift */; };
 		54220FCC211946E400C87693 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 54220FCB211946E300C87693 /* GoogleService-Info.plist */; };
 		54550A39216EE53700375851 /* Pencil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54550A38216EE53700375851 /* Pencil.swift */; };
+		545D30E22197D71800DABB05 /* Object.swift in Sources */ = {isa = PBXBuildFile; fileRef = 545D30E12197D71800DABB05 /* Object.swift */; };
+		54CB59BF21A0D9FB000A4C91 /* ShapesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54CB59BE21A0D9FB000A4C91 /* ShapesController.swift */; };
 		54DBA36521155A4F004345E7 /* WeatherDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54DBA36421155A4F004345E7 /* WeatherDataModel.swift */; };
 		54DBA3692117DBD8004345E7 /* Designer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54DBA3682117DBD8004345E7 /* Designer.swift */; };
 /* End PBXBuildFile section */
@@ -27,7 +28,6 @@
 		5406458C216C3C8E00E26380 /* CanvasController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasController.swift; sourceTree = "<group>"; };
 		540F932D2111430900DE73AB /* Vision.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vision.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		540F93302111430900DE73AB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		540F93342111430900DE73AB /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		540F93372111430900DE73AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		540F93392111430B00DE73AB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		540F933C2111430B00DE73AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -37,6 +37,8 @@
 		54220FC921192E0100C87693 /* TextEditorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextEditorController.swift; sourceTree = "<group>"; };
 		54220FCB211946E300C87693 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		54550A38216EE53700375851 /* Pencil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pencil.swift; sourceTree = "<group>"; };
+		545D30E12197D71800DABB05 /* Object.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Object.swift; sourceTree = "<group>"; };
+		54CB59BE21A0D9FB000A4C91 /* ShapesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapesController.swift; sourceTree = "<group>"; };
 		54DBA36421155A4F004345E7 /* WeatherDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDataModel.swift; sourceTree = "<group>"; };
 		54DBA3682117DBD8004345E7 /* Designer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Designer.swift; sourceTree = "<group>"; };
 		9E926AF6D71218B1B7EE7577 /* Pods-Vision.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vision.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Vision/Pods-Vision.debug.xcconfig"; sourceTree = "<group>"; };
@@ -79,7 +81,6 @@
 			children = (
 				54DBA36421155A4F004345E7 /* WeatherDataModel.swift */,
 				540F93302111430900DE73AB /* AppDelegate.swift */,
-				540F93342111430900DE73AB /* SecondViewController.swift */,
 				540F93362111430900DE73AB /* Main.storyboard */,
 				540F93392111430B00DE73AB /* Assets.xcassets */,
 				540F933B2111430B00DE73AB /* LaunchScreen.storyboard */,
@@ -91,6 +92,8 @@
 				5406458C216C3C8E00E26380 /* CanvasController.swift */,
 				54550A38216EE53700375851 /* Pencil.swift */,
 				5412EB402184D22000591810 /* AnimationController.swift */,
+				545D30E12197D71800DABB05 /* Object.swift */,
+				54CB59BE21A0D9FB000A4C91 /* ShapesController.swift */,
 			);
 			path = Vision;
 			sourceTree = "<group>";
@@ -232,15 +235,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				545D30E22197D71800DABB05 /* Object.swift in Sources */,
 				5406458D216C3C8E00E26380 /* CanvasController.swift in Sources */,
 				54DBA3692117DBD8004345E7 /* Designer.swift in Sources */,
 				54550A39216EE53700375851 /* Pencil.swift in Sources */,
 				54DBA36521155A4F004345E7 /* WeatherDataModel.swift in Sources */,
-				540F93352111430900DE73AB /* SecondViewController.swift in Sources */,
 				54220FCA21192E0100C87693 /* TextEditorController.swift in Sources */,
 				5412EB412184D22000591810 /* AnimationController.swift in Sources */,
 				540F93312111430900DE73AB /* AppDelegate.swift in Sources */,
 				540F934521114B2900DE73AB /* HomeController.swift in Sources */,
+				54CB59BF21A0D9FB000A4C91 /* ShapesController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

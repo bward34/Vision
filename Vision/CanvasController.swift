@@ -20,7 +20,8 @@ class CanvasController: UIViewController {
     
     //MARK: Drawing variables
     var lastPoint = CGPoint.zero
-    var color = UIColor.black
+//    var color = UIColor.black
+    var color = UIColor(red: 0.0, green: 0.5, blue: 0.5, alpha: 0.0)
     var brushWidth: CGFloat = 10.0
     var opacity: CGFloat = 1.0
     var swiped = false
@@ -48,11 +49,6 @@ class CanvasController: UIViewController {
             print(CANVAS_DATA[k])
             
         }
-       //guard let image = mainImageView.image else {
-      //      return
-      //  }
-      //  let activity = UIActivityViewController(activityItems: [image], applicationActivities: nil)
-      //  present(activity, animated: true)
     }
     
     //pencilPressed() -> a function for determing the pencil and color
