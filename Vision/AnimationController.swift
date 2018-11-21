@@ -16,6 +16,8 @@ class AnimationController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
     }
     
     
