@@ -18,10 +18,10 @@
 		547F007D21A5D31E007BE9B2 /* Object.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54304A6421A5CF860046A873 /* Object.swift */; };
 		547F007F21A5D321007BE9B2 /* AnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547F007E21A5D321007BE9B2 /* AnimationController.swift */; };
 		547F008121A5D324007BE9B2 /* CanvasController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547F008021A5D324007BE9B2 /* CanvasController.swift */; };
-		547F008321A5D326007BE9B2 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547F008221A5D326007BE9B2 /* FirstViewController.swift */; };
 		547F008521A5D328007BE9B2 /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547F008421A5D328007BE9B2 /* HomeController.swift */; };
 		547F008721A5D32A007BE9B2 /* ShapesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547F008621A5D32A007BE9B2 /* ShapesController.swift */; };
 		547F008921A5D32C007BE9B2 /* TextEditorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547F008821A5D32C007BE9B2 /* TextEditorController.swift */; };
+		547F008B21A5D985007BE9B2 /* WebSocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 547F008A21A5D985007BE9B2 /* WebSocket.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,10 +37,10 @@
 		54304A6421A5CF860046A873 /* Object.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Object.swift; sourceTree = "<group>"; };
 		547F007E21A5D321007BE9B2 /* AnimationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationController.swift; sourceTree = "<group>"; };
 		547F008021A5D324007BE9B2 /* CanvasController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasController.swift; sourceTree = "<group>"; };
-		547F008221A5D326007BE9B2 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		547F008421A5D328007BE9B2 /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		547F008621A5D32A007BE9B2 /* ShapesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapesController.swift; sourceTree = "<group>"; };
 		547F008821A5D32C007BE9B2 /* TextEditorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextEditorController.swift; sourceTree = "<group>"; };
+		547F008A21A5D985007BE9B2 /* WebSocket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSocket.swift; sourceTree = "<group>"; };
 		9E926AF6D71218B1B7EE7577 /* Pods-Vision.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vision.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Vision/Pods-Vision.debug.xcconfig"; sourceTree = "<group>"; };
 		ACFE723FAFAA480AF9F8D9FE /* Pods_Vision.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Vision.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2B73D88E56DC675ACD46370 /* Pods-Vision.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vision.release.xcconfig"; path = "Pods/Target Support Files/Pods-Vision/Pods-Vision.release.xcconfig"; sourceTree = "<group>"; };
@@ -79,21 +79,21 @@
 		540F932F2111430900DE73AB /* Vision */ = {
 			isa = PBXGroup;
 			children = (
-				54304A6121A5CF860046A873 /* Designer.swift */,
-				54304A6221A5CF860046A873 /* Pencil.swift */,
-				54304A6321A5CF860046A873 /* WeatherDataModel.swift */,
-				54304A6421A5CF860046A873 /* Object.swift */,
+				540F93362111430900DE73AB /* Main.storyboard */,
+				547F008421A5D328007BE9B2 /* HomeController.swift */,
 				547F007E21A5D321007BE9B2 /* AnimationController.swift */,
 				547F008021A5D324007BE9B2 /* CanvasController.swift */,
-				547F008221A5D326007BE9B2 /* FirstViewController.swift */,
-				547F008421A5D328007BE9B2 /* HomeController.swift */,
 				547F008621A5D32A007BE9B2 /* ShapesController.swift */,
 				547F008821A5D32C007BE9B2 /* TextEditorController.swift */,
-				540F93302111430900DE73AB /* AppDelegate.swift */,
-				540F93362111430900DE73AB /* Main.storyboard */,
+				54304A6121A5CF860046A873 /* Designer.swift */,
+				54304A6221A5CF860046A873 /* Pencil.swift */,
+				54304A6421A5CF860046A873 /* Object.swift */,
+				54304A6321A5CF860046A873 /* WeatherDataModel.swift */,
 				540F93392111430B00DE73AB /* Assets.xcassets */,
 				540F933B2111430B00DE73AB /* LaunchScreen.storyboard */,
 				540F933E2111430B00DE73AB /* Info.plist */,
+				540F93302111430900DE73AB /* AppDelegate.swift */,
+				547F008A21A5D985007BE9B2 /* WebSocket.swift */,
 			);
 			path = Vision;
 			sourceTree = "<group>";
@@ -235,8 +235,8 @@
 				547F008121A5D324007BE9B2 /* CanvasController.swift in Sources */,
 				547F008921A5D32C007BE9B2 /* TextEditorController.swift in Sources */,
 				547F007F21A5D321007BE9B2 /* AnimationController.swift in Sources */,
+				547F008B21A5D985007BE9B2 /* WebSocket.swift in Sources */,
 				547F007D21A5D31E007BE9B2 /* Object.swift in Sources */,
-				547F008321A5D326007BE9B2 /* FirstViewController.swift in Sources */,
 				547F007C21A5D31C007BE9B2 /* WeatherDataModel.swift in Sources */,
 				547F008521A5D328007BE9B2 /* HomeController.swift in Sources */,
 				547F007A21A5D318007BE9B2 /* Designer.swift in Sources */,

@@ -12,6 +12,8 @@ import CoreLocation
 import CoreData
 import SwiftyJSON
 import Alamofire
+import SwiftSocket
+import SystemConfiguration.CaptiveNetwork
 
 class HomeController: UIViewController, CLLocationManagerDelegate {
 
@@ -19,7 +21,6 @@ class HomeController: UIViewController, CLLocationManagerDelegate {
     let APP_ID = "30c2075ee7aed4c338fa76abed5e1b3c"
     let YAHOO_ID = "bCKyRS44"
     let YAHOO_URL = "https://query.yahooapis.com/v1/public/yql"
-    let SERVER_URL = "https://localhost:5001/api/shape";
     
     let locationManager = CLLocationManager()
     let weatherData = WeatherDataModel();
@@ -35,7 +36,9 @@ class HomeController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet var condtion: UILabel!
     @IBOutlet var loTemp: UILabel!
     @IBOutlet var hiTemp: UILabel!
-    @IBOutlet var serverLabel: UILabel!
+    @IBOutlet var deviceLabel: UILabel!
+    @IBOutlet var internetLabel: UILabel!
+    @IBOutlet var networkLabel: UILabel!
     
     //MARK: System info container
     
@@ -64,8 +67,10 @@ class HomeController: UIViewController, CLLocationManagerDelegate {
                 greetingLabel.text = "Good day"
         }
         
-        self.getData(url: SERVER_URL, parameters: [:], type: "server")
-        
+        self.pingChip()
+        let ssid = self.getSSID()
+        print("This is the ssid : \(String(describing: ssid))")
+        networkLabel.text = self.getSSID()
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
         locationManager.requestWhenInUseAuthorization()
@@ -80,21 +85,16 @@ class HomeController: UIViewController, CLLocationManagerDelegate {
         Alamofire.request(url, method: .get, parameters: parameters).responseJSON {
             response in //specify self
             if response.result.isSuccess {
+                self.internetLabel.text = "Connected!"
+                self.internetLabel.textColor = UIColor.green
                 let dataJSON : JSON = JSON(response.result.value!)
-                if(type == "weather") {
                 self.updateWeatherData(json: dataJSON)
-                }else {
-                    print(dataJSON)
-                    self.serverLabel.text = "Connected to Server!"
-                }
+                
             }
             else {
-                if(type == "weather") {
+                self.internetLabel.text = "Not Connected!"
+                self.internetLabel.textColor = UIColor.red
                 self.cityLabel.text = "Connection Issues"
-                }
-                else {
-                self.serverLabel.text = "Not Connected!"
-                }
             }
         }
     }
@@ -160,5 +160,29 @@ class HomeController: UIViewController, CLLocationManagerDelegate {
         weatherImage.image = UIImage(named: weatherData.weatherIconName)
     }
     
-    // MARK: END Weather/Api logic functions
+    // MARK: Ping ESP8266 Chip
+    // pingChip() -> A function for testing the connection with the ESP8266 Chip
+    func pingChip() {
+   
+        let socket = WebSocket()
+        
+        if socket.sendData(data: "ping") {
+        deviceLabel.text = "Connected!"
+        deviceLabel.textColor = UIColor.green
+        }
+        else {
+        deviceLabel.text = "Not Connected!"
+        deviceLabel.textColor = UIColor.red
+        }
+    }
+    
+    func getSSID() -> String? {
+        guard let interface = (CNCopySupportedInterfaces() as? [String])?.first,
+            let unsafeInterfaceData = CNCopyCurrentNetworkInfo(interface as CFString) as? [String: Any],
+            let ssid = unsafeInterfaceData["SSID"] as? String else{
+                return nil
+        }
+        return ssid
+    }
+    
 }
