@@ -38,7 +38,6 @@ class HomeController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet var hiTemp: UILabel!
     @IBOutlet var deviceLabel: UILabel!
     @IBOutlet var internetLabel: UILabel!
-    @IBOutlet var networkLabel: UILabel!
     
     //MARK: System info container
     
@@ -68,9 +67,6 @@ class HomeController: UIViewController, CLLocationManagerDelegate {
         }
         
         self.pingChip()
-        let ssid = self.getSSID()
-        print("This is the ssid : \(String(describing: ssid))")
-        networkLabel.text = self.getSSID()
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
         locationManager.requestWhenInUseAuthorization()
@@ -174,15 +170,6 @@ class HomeController: UIViewController, CLLocationManagerDelegate {
         deviceLabel.text = "Not Connected!"
         deviceLabel.textColor = UIColor.red
         }
-    }
-    
-    func getSSID() -> String? {
-        guard let interface = (CNCopySupportedInterfaces() as? [String])?.first,
-            let unsafeInterfaceData = CNCopyCurrentNetworkInfo(interface as CFString) as? [String: Any],
-            let ssid = unsafeInterfaceData["SSID"] as? String else{
-                return nil
-        }
-        return ssid
     }
     
 }
