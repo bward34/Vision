@@ -8,29 +8,41 @@
 
 import UIKit
 
-class ShapesController: UIViewController, UITableViewDataSource {
+class ShapesController: UIViewController {
     
-    let shapeData = ["Cube", "Sphere", "Cone"]
+    var shape = "cube"
+    // RRGGBB hex colors in the same order as the image
+    let colorArray = [ 0x000000, 0xfe0000, 0xff7900, 0xffb900, 0xffde00, 0xfcff00, 0xd2ff00, 0x05c000, 0x00c0a7, 0x0600ff, 0x6700bf, 0x9500c0, 0xbf0199, 0xffffff ]
     
-    //how many sections
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+    @IBOutlet weak var selectedColorView: UIView!
+    @IBOutlet weak var slider: UISlider!
+    
+    @IBAction func sliderChanged(sender: AnyObject) {
+        selectedColorView.backgroundColor = uiColorFromHex(rgbValue: colorArray[Int(slider.value)])
     }
     
-    //hoy many rows
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return (shapeData.count)
+    func uiColorFromHex(rgbValue: Int) -> UIColor {
+        
+        let red =   CGFloat((rgbValue & 0xFF0000) >> 16) / 0xFF
+        let green = CGFloat((rgbValue & 0x00FF00) >> 8) / 0xFF
+        let blue =  CGFloat(rgbValue & 0x0000FF) / 0xFF
+        let alpha = CGFloat(1.0)
+        
+        return UIColor(red: red, green: green, blue: blue, alpha: alpha)
     }
     
-    //contents
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        cell.textLabel?.text = shapeData[indexPath.row]
-        return cell
+    @IBAction func cubePressed(_ sender: Any) {
+        shape = "cube"
     }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    @IBAction func spherePressed(_ sender: Any) {
+        shape = "sphere"
+    }
+    @IBAction func conePressed(_ sender: Any) {
+        shape = "cone"
+    }
+    @IBAction func sendPressed(_ sender: Any) {
+        
+        
     }
     
 }

@@ -27,7 +27,7 @@ class AnimationController: UIViewController {
         
      let data = shapeObject.convertArrayToString(array: shapeObject.points)
         print(data)
-     let client = TCPClient(address: "172.20.10.8", port: 23)
+     let client = TCPClient(address: "192.168.43.199", port: 23)
         switch client.connect(timeout: 1) {
         case .success:
             switch client.send(string: data) {
