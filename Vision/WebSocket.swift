@@ -10,8 +10,8 @@ import Foundation
 import SwiftSocket
 
 class WebSocket {
-    
-    let client = TCPClient(address: "192.168.43.199", port: 23)
+
+    var client = TCPClient(address: "192.168.43.199", port: 23)
     
     func sendData(data: String) -> Bool {
         var suc = true

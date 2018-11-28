@@ -9,6 +9,6 @@ target 'Vision' do
   pod 'Alamofire'
   pod 'SwiftyJSON'
   pod 'SwiftSocket'
-  #pod 'Firebase/Core'
+  pod 'IQKeyboardManagerSwift'
 
 end

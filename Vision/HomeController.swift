@@ -13,7 +13,8 @@ import CoreData
 import SwiftyJSON
 import Alamofire
 import SwiftSocket
-import SystemConfiguration.CaptiveNetwork
+
+    var socket = WebSocket()
 
 class HomeController: UIViewController, CLLocationManagerDelegate {
 
@@ -38,6 +39,8 @@ class HomeController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet var hiTemp: UILabel!
     @IBOutlet var deviceLabel: UILabel!
     @IBOutlet var internetLabel: UILabel!
+    @IBOutlet var ipAddress: UITextField!
+    @IBOutlet var port: UITextField!
     
     //MARK: System info container
     
@@ -65,6 +68,9 @@ class HomeController: UIViewController, CLLocationManagerDelegate {
             default:
                 greetingLabel.text = "Good day"
         }
+        
+        ipAddress.text = "192.168.43.199"
+        port.text = "23"
         
         self.pingChip()
         locationManager.delegate = self
@@ -156,11 +162,15 @@ class HomeController: UIViewController, CLLocationManagerDelegate {
         weatherImage.image = UIImage(named: weatherData.weatherIconName)
     }
     
+    @IBAction func updateIP() {
+        let ip:String = ipAddress.text!
+        let portNum:String = port.text!
+        socket.client = TCPClient(address: ip, port: Int32(portNum)!)
+        pingChip()
+    }
     // MARK: Ping ESP8266 Chip
     // pingChip() -> A function for testing the connection with the ESP8266 Chip
     func pingChip() {
-   
-        let socket = WebSocket()
         
         if socket.sendData(data: "ping") {
         deviceLabel.text = "Connected!"
