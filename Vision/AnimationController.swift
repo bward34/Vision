@@ -27,21 +27,14 @@ class AnimationController: UIViewController {
         
      let data = shapeObject.convertArrayToString(array: shapeObject.points)
         print(data)
-     let client = TCPClient(address: "192.168.43.199", port: 23)
-        switch client.connect(timeout: 1) {
-        case .success:
-            switch client.send(string: data) {
-            case .success:
-                    print("success")
-             
-            case .failure(let error):
-                print(error)
-            }
-       case .failure(let error):
-           print(error)
+        socket.sendData(data: data)
+    }
+    
+    
+    @IBAction func sprialPressed(_ sender: Any) {
         
-       }
-        usleep(350000)
-        client.close()
+        let data = shapeObject.convertArrayToString(array: shapeObject.sprial)
+        print(data)
+        socket.sendData(data: data)
     }
 }
