@@ -162,6 +162,7 @@ class HomeController: UIViewController, CLLocationManagerDelegate {
         weatherImage.image = UIImage(named: weatherData.weatherIconName)
     }
     
+    //updateIp() -> allows user to update the ip adress being sent to
     @IBAction func updateIP() {
         let ip:String = ipAddress.text!
         let portNum:String = port.text!
@@ -172,7 +173,7 @@ class HomeController: UIViewController, CLLocationManagerDelegate {
     // pingChip() -> A function for testing the connection with the ESP8266 Chip
     func pingChip() {
         
-        if socket.sendData(data: "ping") {
+        if socket.transmitData(data: "ping") {
         deviceLabel.text = "Connected!"
         deviceLabel.textColor = UIColor.green
         }

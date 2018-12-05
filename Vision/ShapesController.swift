@@ -66,6 +66,7 @@ class ShapesController: UIViewController {
             shapeObject.points[i][5] = String(format: "%05d", b)
         }
         print(shapeObject.convertArrayToString(array: shapeObject.points))
+        socket.sendData(data: shapeObject.convertArrayToString(array: shapeObject.points))
     }
     
 }
