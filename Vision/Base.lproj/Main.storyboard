@@ -204,7 +204,7 @@
                         <color key="backgroundColor" red="0.24313725489999999" green="0.22352941179999999" blue="0.22352941179999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="home_tab" id="acW-dT-cKf"/>
                     <connections>
                         <outlet property="cityLabel" destination="wOG-WQ-VGi" id="1Xc-Xq-NcP"/>
                         <outlet property="condtion" destination="PCY-ME-W5q" id="ib7-EW-wQd"/>
@@ -249,11 +249,15 @@
                                     <action selector="sprialPressed:" destination="6Ke-27-NqO" eventType="touchUpInside" id="soj-31-bHw"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Animation" translatesAutoresizingMaskIntoConstraints="NO" id="ROq-gl-y9S" userLabel="Home Logo Image View">
+                                <rect key="frame" x="267" y="36" width="81" height="85"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.24313725489999999" green="0.22352941179999999" blue="0.22352941179999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="0FZ-4C-QhR"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Animations" id="OmP-Jm-Ph2"/>
+                    <tabBarItem key="tabBarItem" title="Animations" image="animation_tab" id="OmP-Jm-Ph2"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BbH-Px-urx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -393,13 +397,6 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Shapes" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QGg-4C-7Y9">
-                                <rect key="frame" x="16" y="51" width="225" height="46"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
-                                <color key="textColor" red="1" green="0.45882352939999999" blue="0.090196078430000007" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Shapes" translatesAutoresizingMaskIntoConstraints="NO" id="Fhl-2T-CGb" userLabel="Home Logo Image View">
                                 <rect key="frame" x="273" y="21" width="81" height="74"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -411,11 +408,18 @@
                                 <color key="textColor" red="0.96470588239999999" green="0.95686274510000002" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Shapes" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QGg-4C-7Y9">
+                                <rect key="frame" x="16" y="49" width="225" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                <color key="textColor" red="1" green="0.45882352939999999" blue="0.090196078430000007" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.24313725489999999" green="0.22352941179999999" blue="0.22352941179999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="Bzg-PE-XQg"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Shapes" id="mea-vz-W4a"/>
+                    <tabBarItem key="tabBarItem" title="Shapes" image="shapes_tab" id="mea-vz-W4a"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="selectedColorView" destination="NcY-Ig-Aoi" id="YMh-oV-q4F"/>
@@ -424,7 +428,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V2u-ga-euk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2332" y="-318.89055472263868"/>
+            <point key="canvasLocation" x="1545" y="359"/>
         </scene>
         <!--Canvas-->
         <scene sceneID="wg7-f3-ORb">
@@ -657,7 +661,7 @@
                         <color key="backgroundColor" red="0.24313725489999999" green="0.22352941179999999" blue="0.22352941179999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Canvas" image="second" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="Canvas" image="canvas_tab" id="cPa-gy-q4n"/>
                     <connections>
                         <outlet property="mainImageView" destination="0Ld-jN-9w1" id="bjW-2a-cFc"/>
                         <outlet property="tempImageView" destination="KRb-yQ-fKq" id="K6K-2n-E94"/>
@@ -666,88 +670,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="749.60000000000002" y="359.37031484257875"/>
-        </scene>
-        <!--Text Editor-->
-        <scene sceneID="cm2-vx-6OW">
-            <objects>
-                <viewController id="uGR-lR-0kM" customClass="TextEditorController" customModule="Vision" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="VHJ-kG-Pfa">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="c3N-vp-LRU">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="48"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.17254901959999999" green="0.1529411765" blue="0.1529411765" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Text Messeger" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dYu-Zr-WFX">
-                                <rect key="frame" x="16" y="56" width="225" height="46"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
-                                <color key="textColor" red="1" green="0.45882352939999999" blue="0.090196078430000007" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Type a message to send to the Vision device." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pNl-PQ-CYB">
-                                <rect key="frame" x="16" y="96" width="359" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.96470588239999999" green="0.95686274510000002" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i9p-hl-tOn">
-                                <rect key="frame" x="16" y="150" width="343" height="170"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="D5J-51-T4c">
-                                        <rect key="frame" x="8" y="45" width="327" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                                <color key="value" red="1" green="0.45882352939999999" blue="0.090196078430000007" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                <real key="value" value="3"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="3"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </textField>
-                                </subviews>
-                                <color key="backgroundColor" red="0.17254901959999999" green="0.1529411765" blue="0.1529411765" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="5"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="layer.boarderColoer">
-                                        <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="0.0"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="1"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" red="0.96470588239999999" green="0.95686274510000002" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" red="0.24313725489999999" green="0.22352941179999999" blue="0.22352941179999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="Xwz-QU-ytP"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Text Editor" image="second" id="P26-vX-6l7">
-                        <color key="badgeColor" red="0.17254901959999999" green="0.1529411765" blue="0.1529411765" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </tabBarItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="pqv-Pi-yc9" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1544.8" y="358.4707646176912"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -764,7 +686,6 @@
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
                         <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
                         <segue destination="6Ke-27-NqO" kind="relationship" relationship="viewControllers" id="A3b-qt-mIo"/>
-                        <segue destination="uGR-lR-0kM" kind="relationship" relationship="viewControllers" id="5qI-ei-xAd"/>
                         <segue destination="9gF-6T-iAc" kind="relationship" relationship="viewControllers" id="AGZ-eO-5TS"/>
                     </connections>
                 </tabBarController>
@@ -774,6 +695,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Animation" width="1200" height="1200"/>
         <image name="Black" width="253" height="870"/>
         <image name="Blue" width="246" height="872"/>
         <image name="Brown" width="249" height="869"/>
@@ -787,7 +709,10 @@
         <image name="Red" width="244" height="871"/>
         <image name="Shapes" width="1200" height="1200"/>
         <image name="Yellow" width="244" height="871"/>
+        <image name="animation_tab" width="25" height="25"/>
+        <image name="canvas_tab" width="25" height="25"/>
         <image name="home_open" width="1200" height="1200"/>
-        <image name="second" width="30" height="30"/>
+        <image name="home_tab" width="25" height="25"/>
+        <image name="shapes_tab" width="25" height="25"/>
     </resources>
 </document>

@@ -29,7 +29,7 @@ class WebSocket {
         print(error)
         suc = false
         }
-        usleep(350000)
+        usleep(150000)
         client.close()
         return suc
     }
