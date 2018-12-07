@@ -4,27 +4,27 @@
 //
 //  Created by Brandon Ward on 10/8/18.
 //  Copyright © 2018 LEDBoyzz. All rights reserved.
-//
-// Code based on this tutorial:
-// https://www.raywenderlich.com/6721-welcome-to-the-new-raywenderlich-com
 
 import UIKit
 
 class CanvasController: UIViewController {
     
-    var CANVAS_DATA: [UIColor: [CGPoint]] = [:]
+    var CANVAS_DATA: [String: String] = [:]
     var COLOR: UIColor = UIColor.black;
+    var data = ""
     
     @IBOutlet weak var mainImageView: UIImageView!
     @IBOutlet weak var tempImageView: UIImageView!
     
     //MARK: Drawing variables
     var lastPoint = CGPoint.zero
-//    var color = UIColor.black
-    var color = UIColor(red: 0.0, green: 0.5, blue: 0.5, alpha: 0.0)
+    var color = UIColor.black
     var brushWidth: CGFloat = 10.0
     var opacity: CGFloat = 1.0
     var swiped = false
+    var r = 0
+    var g = 0
+    var b = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,15 +39,13 @@ class CanvasController: UIViewController {
     }
     
     
-    //To be send pressed
+    //sendPressed() -> formats the canvas drawing data and sends it
     @IBAction func sendPressed(_ sender: Any) {
         
-        for k in CANVAS_DATA.keys {
-            print("the key is...")
-            print(k)
-            print("the values are ...")
-            print(CANVAS_DATA[k])
-            
+        if(CANVAS_DATA.count != 0) {
+          prepDictionary()
+          socket.sendData(data: data)
+          print(data)
         }
     }
     
@@ -56,8 +54,12 @@ class CanvasController: UIViewController {
         guard let pencil = Pencil(tag: sender.tag) else {
             return
         }
+        
         color = pencil.color
-        COLOR = pencil.color
+        r = Int(((pencil.hexColor & 0xFF0000) >> 16) * 0xFF)
+        g = Int(((pencil.hexColor & 0x00FF00) >> 8) * 0xFF)
+        b = Int((pencil.hexColor & 0x0000FF) * 0xFF)
+        
         if pencil == .eraser {
             opacity = 1.0
         }
@@ -105,15 +107,18 @@ class CanvasController: UIViewController {
         drawLine(from: lastPoint, to: currentPoint)
         lastPoint = currentPoint
         
-        //Records canvas point data into dictionary.
-        if CANVAS_DATA[COLOR] != nil {
-            CANVAS_DATA[COLOR]?.append(lastPoint)
-        } else {
-            var point = [CGPoint]()
-            point.append(lastPoint)
-            CANVAS_DATA.updateValue(point, forKey: COLOR)
-        }
+        let x = Int(lastPoint.x / 4.55)
+        let y = lastPoint.y < 90 ? 0 : lastPoint.y > 460 ? 9 : Int(lastPoint.y / 46)
+  
+        let X_AND_Z = String(format: "%02d", y) + " 31 " + String(format: "%03d", x)
+        let color = String(format: "%05d", r) + " " + String(format: "%05d", g) + " " + String(format: "%05d", b)
         
+        //Records canvas point data into dictionary.
+        if CANVAS_DATA[X_AND_Z] != nil {
+            CANVAS_DATA[X_AND_Z] = color
+        } else {
+            CANVAS_DATA.updateValue(color, forKey: X_AND_Z)
+        }
     }
     
     //touchesEneded() -> records when the touches have ended and draws in view
@@ -128,6 +133,16 @@ class CanvasController: UIViewController {
         tempImageView?.image?.draw(in: view.bounds, blendMode: .normal, alpha: opacity)
         mainImageView.image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
+    }
+    
+    //prepDictionary() -> converts the dicionary to a string before sending it
+    func prepDictionary() {
+        
+        data =  "1" + " " + String(format: "%05d", CANVAS_DATA.count) + " "
+        for (coordinate, color) in CANVAS_DATA
+        {
+            data = data + coordinate + " " + color + " "
+        }
     }
 
 

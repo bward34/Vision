@@ -11,6 +11,7 @@ import UIKit
 class ShapesController: UIViewController {
     
     var shapeObject = Object()
+    var dataArray: [[String]] = [[]]
     var shape = "cube"
     var r = 0
     var g = 0
@@ -28,7 +29,7 @@ class ShapesController: UIViewController {
     
     // uiColorFromHex() -> sets the rgb value to the correct format
     func uiColorFromHex(rgbValue: Int) -> UIColor {
-        
+
         let red =   CGFloat((rgbValue & 0xFF0000) >> 16) / 0xFF
         r =  ((rgbValue & 0xFF0000) >> 16) * 0xFF
         let green = CGFloat((rgbValue & 0x00FF00) >> 8) / 0xFF
@@ -59,14 +60,24 @@ class ShapesController: UIViewController {
     @IBAction func sendPressed(_ sender: Any) {
         
         print("r: \(r) g: \(g) b: \(b)")
-        let count = Int(shapeObject.points[1][0])! + 2
-        for i in 2..<count {
-            shapeObject.points[i][3] = String(format: "%05d", r)
-            shapeObject.points[i][4] = String(format: "%05d", g)
-            shapeObject.points[i][5] = String(format: "%05d", b)
+        switch shape {
+        case "cube":
+            dataArray = shapeObject.cube
+        case "cone":
+            dataArray = shapeObject.points
+        case "sphere":
+            dataArray = shapeObject.sphere
+        default:
+            dataArray = shapeObject.cube
         }
-        print(shapeObject.convertArrayToString(array: shapeObject.points))
-        socket.sendData(data: shapeObject.convertArrayToString(array: shapeObject.points))
+        let count = Int(dataArray[1][0])! + 2
+        for i in 2..<count {
+            dataArray[i][3] = String(format: "%05d", r)
+            dataArray[i][4] = String(format: "%05d", g)
+            dataArray[i][5] = String(format: "%05d", b)
+        }
+        print(shapeObject.convertArrayToString(array: dataArray))
+        socket.sendData(data: shapeObject.convertArrayToString(array: dataArray))
     }
     
 }

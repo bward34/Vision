@@ -16,8 +16,6 @@ class AnimationController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
     }
     
     let shapeObject = Object()
@@ -35,17 +33,6 @@ class AnimationController: UIViewController {
         
         let data = shapeObject.convertArrayToString(array: shapeObject.sprial)
         socket.sendData(data: data)
-       // socket.sendData(data: String(data[data.index(data.startIndex, offsetBy: 0)..<data.index(data.startIndex, offsetBy: 7)]))
-       // print( String(data[data.index(data.startIndex, offsetBy: 0)..<data.index(data.startIndex, offsetBy: 7)]))
-       // let splitWord = String(data[data.index(data.startIndex, offsetBy: 7)..<data.index(data.endIndex, offsetBy: 0)])
-      //  let splitArray = splitWord.split(by: 840)
-        
-        //for word in splitArray {
-      //  print(word)
-       //    var count = 0
-       //    while(!socket.sendData(data: word)) {
-      //      }
-      //  }
     }
     
 }

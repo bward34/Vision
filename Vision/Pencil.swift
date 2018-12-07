@@ -51,6 +51,33 @@ enum Pencil {
         }
     }
     
+    var hexColor: uint {
+        switch self {
+        case .black:
+            return 0x000000
+        case .grey:
+            return 0x808080
+        case .red:
+            return 0xFF0000
+        case .darkblue:
+            return 0x0000ff
+        case .lightBlue:
+            return 0xadd8e6
+        case .darkGreen:
+            return 0x008000
+        case .lightGreen:
+            return 0x0ed80e
+        case .brown:
+            return 0x8B4513
+        case .orange:
+            return 0xffa500
+        case .yellow:
+            return 0xffff00
+        case .eraser:
+            return 0xffffff
+        }
+    }
+
     var color: UIColor {
         switch self {
         case .black:
