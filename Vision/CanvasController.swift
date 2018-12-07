@@ -12,9 +12,13 @@ class CanvasController: UIViewController {
     var CANVAS_DATA: [String: String] = [:]
     var COLOR: UIColor = UIColor.black;
     var data = ""
+    var layer = "1"
     
     @IBOutlet weak var mainImageView: UIImageView!
     @IBOutlet weak var tempImageView: UIImageView!
+    @IBOutlet weak var info: UILabel!
+    @IBOutlet weak var valueLabel: UILabel!
+    @IBOutlet weak var stepper: UIStepper!
     
     //MARK: Drawing variables
     var lastPoint = CGPoint.zero
@@ -28,7 +32,12 @@ class CanvasController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        stepper.wraps = true
+        stepper.autorepeat = true
+        stepper.maximumValue = 6
     }
+    
     
     //resestPressed() -> a function for clearing the canvas
     @IBAction func resetPressed(_ sender: Any) {
@@ -43,10 +52,26 @@ class CanvasController: UIViewController {
     @IBAction func sendPressed(_ sender: Any) {
         
         if(CANVAS_DATA.count != 0) {
-          prepDictionary()
-          socket.sendData(data: data)
-          print(data)
+            prepDictionary()
+            info.isHidden = false
+            print(data)
+            if socket.sendData(data: data) {
+                info.text = "Drawing sent!"
+                info.textColor = UIColor.green
+            } else {
+                info.text = "Connection Timeout!"
+                info.textColor = UIColor.red
+            }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                self.info.isHidden = true
+            }
         }
+    }
+    
+    
+    @IBAction func stepperValueChanged(_ sender: UIStepper) {
+        valueLabel.text = Int(sender.value).description
+        layer = Int(sender.value).description
     }
     
     //pencilPressed() -> a function for determing the pencil and color
@@ -107,10 +132,11 @@ class CanvasController: UIViewController {
         drawLine(from: lastPoint, to: currentPoint)
         lastPoint = currentPoint
         
-        let x = Int(lastPoint.x / 4.55)
-        let y = lastPoint.y < 90 ? 0 : lastPoint.y > 460 ? 9 : Int(lastPoint.y / 46)
-  
-        let X_AND_Z = String(format: "%02d", y) + " 31 " + String(format: "%03d", x)
+        let x = Int(lastPoint.x / 1.03)
+        let y = lastPoint.y < 75 ? 0 : lastPoint.y > 470 ? 31 : Int(lastPoint.y / 15.5)
+        print(lastPoint)
+        print("\(x) and \(y)")
+        let X_AND_Z = "0" + layer + " " + String(format: "%02d", y) + " " +  String(format: "%03d", x)
         let color = String(format: "%05d", r) + " " + String(format: "%05d", g) + " " + String(format: "%05d", b)
         
         //Records canvas point data into dictionary.

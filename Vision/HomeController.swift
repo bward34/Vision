@@ -41,6 +41,7 @@ class HomeController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet var internetLabel: UILabel!
     @IBOutlet var ipAddress: UITextField!
     @IBOutlet var port: UITextField!
+    @IBOutlet var infoPort: UILabel!
     
     //MARK: System info container
     
@@ -167,12 +168,13 @@ class HomeController: UIViewController, CLLocationManagerDelegate {
         let ip:String = ipAddress.text!
         let portNum:String = port.text!
         socket.client = TCPClient(address: ip, port: Int32(portNum)!)
+        infoPort.isHidden = false
+        infoPort.text = "Checking network..."
         pingChip()
     }
     // MARK: Ping ESP8266 Chip
     // pingChip() -> A function for testing the connection with the ESP8266 Chip
     func pingChip() {
-        
         if socket.transmitData(data: "ping") {
         deviceLabel.text = "Connected!"
         deviceLabel.textColor = UIColor.green
@@ -180,6 +182,9 @@ class HomeController: UIViewController, CLLocationManagerDelegate {
         else {
         deviceLabel.text = "Not Connected!"
         deviceLabel.textColor = UIColor.red
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            self.infoPort.isHidden = true
         }
     }
     

@@ -15,8 +15,8 @@ class WebSocket {
     var client = TCPClient(address: "192.168.43.199", port: 23)
     
     //sendData() -> formats data and preps it for sending
-    func sendData(data: String) {
-        
+    func sendData(data: String) -> Bool {
+        var successType = true
         transmitData(data: String(data[data.index(data.startIndex, offsetBy: 0)..<data.index(data.startIndex, offsetBy: 7)]))
         print( String(data[data.index(data.startIndex, offsetBy: 0)..<data.index(data.startIndex, offsetBy: 7)]))
         let splitWord = String(data[data.index(data.startIndex, offsetBy: 7)..<data.index(data.endIndex, offsetBy: 0)])
@@ -26,8 +26,10 @@ class WebSocket {
             var count = 0
             while(!transmitData(data: word) && count != 3) {
                 count = count + 1
+                successType = false
             }
         }
+        return successType
     }
     
     //transmitData() -> sends data to device using socket
@@ -47,7 +49,7 @@ class WebSocket {
         print(error)
         suc = false
         }
-        usleep(150000)
+        usleep(200000)
         client.close()
         return suc
     }

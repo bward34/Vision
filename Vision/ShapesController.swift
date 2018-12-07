@@ -21,6 +21,7 @@ class ShapesController: UIViewController {
     
     @IBOutlet weak var selectedColorView: UIView!
     @IBOutlet weak var slider: UISlider!
+    @IBOutlet weak var info: UILabel!
     
     //sliderChanged() -> gets the slider values for the color
     @IBAction func sliderChanged(sender: AnyObject) {
@@ -76,8 +77,20 @@ class ShapesController: UIViewController {
             dataArray[i][4] = String(format: "%05d", g)
             dataArray[i][5] = String(format: "%05d", b)
         }
+
         print(shapeObject.convertArrayToString(array: dataArray))
-        socket.sendData(data: shapeObject.convertArrayToString(array: dataArray))
+        info.isHidden = false
+        if socket.sendData(data: shapeObject.convertArrayToString(array: dataArray)) {
+            info.text = "Shape sent!"
+            info.textColor = UIColor.green
+        } else {
+            info.text = "Connection Timeout!"
+            info.textColor = UIColor.red
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+            self.info.isHidden = true
+        }
+
     }
     
 }
