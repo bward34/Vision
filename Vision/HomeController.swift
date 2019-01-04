@@ -18,10 +18,10 @@ import SwiftSocket
 
 class HomeController: UIViewController, CLLocationManagerDelegate {
 
-    let WEATHER_URL = "http://api.openweathermap.org/data/2.5/weather"
-    let APP_ID = "30c2075ee7aed4c338fa76abed5e1b3c"
-    let YAHOO_ID = "bCKyRS44"
-    let YAHOO_URL = "https://query.yahooapis.com/v1/public/yql"
+    let WEATHER_URL = "foo"
+    let APP_ID = "bar"
+    let YAHOO_ID = "foo"
+    let YAHOO_URL = "bar"
     
     let locationManager = CLLocationManager()
     let weatherData = WeatherDataModel();
